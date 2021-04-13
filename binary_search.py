@@ -32,3 +32,15 @@ else:
 # At this point target > l[midpoint]
     return binary_search(l, target, midpoint+1, high)
 
+if __name__=='__main__':
+    # Remember l = [1, 3, 5, 10, 12]
+    # The target is 7 now
+    # print(binary_search(l, target))
+
+    length = 1000
+    # Created a sorted list of length 10000
+    sorted_list = set()
+    while len(sorted_list) < length:
+        sorted_list.add(random.randint(-3*length, 3*length))
+    sorted_list = sorted(list(sorted_list))
+
