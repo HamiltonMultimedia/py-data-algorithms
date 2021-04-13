@@ -20,3 +20,15 @@ def binary_search(l, target, low=None, high=None):
 # if l = [1, 3, 5, 10, 12] it should return 3
 midpoint = (low + high) // 2 
 
+# Now we'll test if l[midpoint] == target, 
+# If not we'll find out if the target is on the left or the right of the the midpoint
+# The algo tells us everything to the left of the midpoint is smaller that the midpoint
+# and everything to the right will be bigger
+if l[midpoint] == target:
+    return midpoint
+elif target < l[midpoint]:
+    return binary_search(l, target, low, midpoint-1)
+else:
+# At this point target > l[midpoint]
+    return binary_search(l, target, midpoint+1, high)
+
